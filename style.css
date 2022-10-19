@@ -1,0 +1,370 @@
+:root{
+    --naranja-claro: #E16736;
+    --naranja-oscuro:#A0201B;
+    --morado: #413448;
+    --crema: #F8DB95;
+}
+
+/* FUENTE UTILIZADA*/
+@font-face {
+    font-family: 'ChineseRocksRg-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ChineseRocksRg-Regular'), url('chineserocksrg.woff') format('woff');
+    }
+
+/* ESTILO DE LA BARRA DE SCROLL*/
+body::-webkit-scrollbar {
+    width: 18px;              
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--crema);        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--morado); 
+    border-radius: 20px;       
+    border: 3px solid var(--morado);  
+}
+
+a{
+    color: var(--morado);
+}
+
+a:hover{
+    text-decoration: none;
+    transition: 1s;
+    color: var(--crema);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'ChineseRocksRg-Regular';
+    background-image: url("img/background/bkgpic.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+/* PARA LA MUSICA*/
+#play,#stop{
+	display:inline-block;
+	padding:19px;
+	border:2px solid #000;
+	border-radius
+	:10px;
+}
+
+iframe{
+    display:none;
+}
+
+.boton-musica{
+    background-color: var(--crema);
+    color: var(--morado);
+    border: 2px solid var(--morado);
+}
+
+.boton-musica:hover{
+    cursor: pointer;
+    background-color: var(--morado);
+    color: var(--crema);
+    border: 2px solid var(--crema);
+}
+
+.main-ppal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.botones-index{
+    padding: 10% 0;
+}
+
+.boton-azul{
+    font-family: 'ChineseRocksRg-Regular';
+    font-size: 30px;
+    font-weight: 400;
+    padding: 24px;
+    width: 317px;
+    border-radius: 24px;
+    border: 1px solid var(--crema);
+    background-color: var(--morado);
+    color: var(--crema);
+}
+
+.boton-azul:hover{
+    cursor: pointer;
+    background-color: var(--crema);
+    color: var(--morado);
+    transition: 0.8s;
+}
+
+.boton-transparente{
+    font-family: 'ChineseRocksRg-Regular';
+    font-size: 30px;
+    font-weight: 400;
+    padding: 24px;
+    width: 317px;
+    border-radius: 24px;
+    border: 1px solid var(--morado);
+    background-color: var(--crema);
+    color: var(--morado);
+}
+
+.boton-transparente:hover{
+    cursor: pointer;
+    background-color: var(--morado);
+    color: var(--crema);
+    transition: 0.8s;
+}
+
+.espacio-vertical{
+    margin-bottom: 20px;
+}
+
+footer{
+ display: flex;
+ margin: auto  auto 0% auto;
+ text-align: center;
+ align-items: center;
+ color: var(--crema);
+ font-size: 20px;
+}
+
+.creditos{
+    margin: 25px auto;
+    text-align: center;
+}
+
+
+/*ESTILOS DE LA PAGINA INGRESAR PALABRA*/
+
+.main-palabra{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    
+}
+
+#ingreso{
+    width: 299px;
+    height: 48px;
+    background-color: var(--crema);
+    font-family: 'ChineseRocksRg-Regular';
+    font-size: 32px;
+    line-height: 48px;
+    margin-bottom: 30%;
+    border: none;
+}
+
+Input::placeholder{
+    color: var(--morado);
+}
+
+.informacion{
+    display: flex;
+    flex-direction: row;
+    color: var(--crema);
+}
+
+#advertencia{
+    display: none;
+    color: var(--crema);
+    padding-bottom: 5px;
+}
+
+.botones{
+    padding: 5% 0;
+}
+
+.botones a{
+    text-decoration: none;
+}
+
+.espacio-horizontal{
+    margin-right: 20px;
+}
+
+
+/*ESTILOS PARA LA PAGINA DEL JUEGO*/
+
+.main-juego{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.dibujo{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid var(--morado);
+    background: linear-gradient(var(--crema),var(--naranja-claro),var(--naranja-oscuro));
+    border-radius: 15px;
+}
+
+canvas{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartel-perdiste{
+    padding: 20px;
+    color: var(--crema);
+    font-size: 25px;
+    display: none;
+}
+
+.cartel-ganaste{
+    padding: 20px;
+    color: var(--crema);
+    font-size: 25px;
+    display: none;
+}
+
+.cartel-palabra{
+    padding: 20px;
+    color: var(--crema);
+    font-size: 25px;
+    display: none;
+}
+
+.letras{
+    width: 464px;
+    height: 152px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.letras-correctas{
+    font-family: 'ChineseRocksRg-Regular';
+    width: 100%;
+    height: 92px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+#lineas{
+    font-family: 'ChineseRocksRg-Regular';
+    text-align: center;
+    justify-content:end;
+    align-items: center;
+    
+}
+
+.letras-equivocadas{
+    font-family: 'ChineseRocksRg-Regular';
+    border: none;
+    resize: none;
+    height: 30px;
+    color: var(--morado);
+    font-size: 25px;
+    text-align: center;
+    background-color: var(--crema);
+    border-radius: 15px;
+}
+
+.teclado-virtual{
+    display: none;
+    
+}
+
+.teclado-fila{
+    margin-bottom: 5px;
+}
+.tecla{
+    font-family: 'ChineseRocksRg-Regular';
+    background-color: var(--morado);
+    color: var(--crema);
+    border: none;
+    width: 40px;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.tecla:hover{
+    background-color: var(--crema);
+    color: var(--morado);
+    border: 1px solid var(--morado);
+    cursor: pointer;
+}
+
+@media screen and (max-width:728px){
+    .botones-index{
+        padding: 50% 0 80% 0;
+    }
+    .botones{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        padding: 50% 0 80% 0;
+        text-align: center;
+        align-items: center;
+
+    }
+    .boton-azul{
+        margin-bottom: 5%;
+    }
+
+    footer{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /*ESTILOS PARA PAGINA INGRESAR PALABRA*/
+    #ingreso{
+        margin: 30% auto;
+    }
+
+    .informacion{
+        justify-content: flex-start;
+        
+    }
+    .espacio-horizontal{
+        margin-right: 0px;
+    }
+
+    /*ESTILOS PARA PAGINA JUEGO*/
+
+    .teclado-virtual{
+        display: block;
+    }
+
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Juego del Ahorcado - by Sergio Galicia N.</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="img/logo.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			
+			<div id="musica">
+				<button class="boton-musica" id="play"><i class="fas fa-play"></i></button>
+				<button class="boton-musica" id="stop"><i class="fas fa-stop"></i></button>
+			</div>
+		</header>
+
+		<!-- INICIO DEL JUEGO -->
+		<main class="main-ppal" id="main-ppal">
+            <img src="img/logo.png" class="logo" onclick="home()"> 
+			<div class="botones-index">
+				<div>
+					
+					<button class="boton-azul espacio-vertical" onclick="nuevoJuego()">Iniciar Juego</button>
+		
+				</div>
+				<div>
+					<button class="boton-transparente" onclick="agregarPalabra()">Agregar Nueva Palabra</button>
+				</div>
+			</div>
+		</main>
+		<!-- PARA INGRESAR LA NUEVA PALABRA-->
+        <main class="main-palabra" id="main-palabra">
+            <form action="">
+                <input name="ingreso" id="ingreso" type="text" placeholder="Ingrese una palabra">
+            </form>
+            <div class="info">
+				<p id="advertencia">Solo mayusculas y un maximo de 8 letras</p>
+				<div class="informacion">
+					<i class="fas fa-exclamation-circle"></i>
+					<p>Máx. de 8 letras</p>
+				</div>
+            </div>
+			<div class="botones">
+					<button onclick="guardarPalabra()" class="boton-azul espacio-horizontal">Guardar y Empezar</button>
+					<button class="boton-transparente" onclick="inicio()">Cancelar</button>
+			</div>
+		</main>
+		<!-- PAGINA DEL JUEGO -->
+        <main onclick="detectarPresionada()" class="main-juego" id="main-juego">
+			
+			<canvas class="dibujo" id="dibujo" width="360" height="480">
+				<!-- ACA VA EL DIBUJO DEL AHORCADO-->
+			</canvas>
+			<div id="cartel-perdiste" class="cartel-perdiste">
+				<h2>¡AHORCADO! 😣</h2>
+			</div>
+			<div id="cartel-ganaste" class="cartel-ganaste">
+				<h2>¡GANASTE! 😎</h2>
+			</div>
+			<div id="cartel-palabra" class="cartel-palabra">
+				<h2>La palabra era: <p id="palabra-perdida"></p></h2>
+			</div>
+			<div class="letras">
+				
+				<div class="letras-correctas">
+					
+					<canvas id="lineas" width="300px" height="92px">
+						
+					</canvas>
+				</div>
+					<textarea class="letras-equivocadas"  id="letras-equivocadas" disabled ></textarea>
+			</div>
+
+			<div class="teclado-virtual" id="teclado-virtual">
+				<div class="teclado-fila">
+					<button class="tecla" onclick="teclaDetectada('Q')">Q</button>
+					<button class="tecla" onclick="teclaDetectada('W')">W</button>
+					<button class="tecla" onclick="teclaDetectada('E')">E</button>
+					<button class="tecla" onclick="teclaDetectada('R')">R</button>
+					<button class="tecla" onclick="teclaDetectada('T')">T</button>
+					<button class="tecla" onclick="teclaDetectada('Y')">Y</button>
+					<button class="tecla" onclick="teclaDetectada('U')">U</button>
+					<button class="tecla" onclick="teclaDetectada('I')">I</button>
+					<button class="tecla" onclick="teclaDetectada('O')">O</button>
+					<button class="tecla" onclick="teclaDetectada('P')">P</button>
+				</div>
+				<div class="teclado-fila">
+					<button class="tecla" onclick="teclaDetectada('A')">A</button>
+					<button class="tecla" onclick="teclaDetectada('S')">S</button>
+					<button class="tecla" onclick="teclaDetectada('D')">D</button>
+					<button class="tecla" onclick="teclaDetectada('F')">F</button>
+					<button class="tecla" onclick="teclaDetectada('G')">G</button>
+					<button class="tecla" onclick="teclaDetectada('H')">H</button>
+					<button class="tecla" onclick="teclaDetectada('J')">J</button>
+					<button class="tecla" onclick="teclaDetectada('K')">K</button>
+					<button class="tecla" onclick="teclaDetectada('L')">L</button>
+				</div>
+				<div class="teclado-fila">
+					<button class="tecla" onclick="teclaDetectada('Z')">Z</button>
+					<button class="tecla" onclick="teclaDetectada('X')">X</button>
+					<button class="tecla" onclick="teclaDetectada('C')">C</button>
+					<button class="tecla" onclick="teclaDetectada('V')">V</button>
+					<button class="tecla" onclick="teclaDetectada('B')">B</button>
+					<button class="tecla" onclick="teclaDetectada('N')">N</button>
+					<button class="tecla" onclick="teclaDetectada('M')">M</button>
+				</div>
+			</div>
+
+			<div class="botones">
+					<button class="boton-azul" onclick="nuevoJuego()">Nuevo Juego</button>
+				
+					<button class="boton-transparente" onclick="inicio()">Desistir</button>
+			</div>
+		</main>
+		<footer>
+            
+            <p class="copyright">&copy Copyright Designed by Sergio Galicia N.-2022</p>
+        </footer>
+		
+        <script src="https://kit.fontawesome.com/4cd467655d.js" crossorigin="anonymous"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
